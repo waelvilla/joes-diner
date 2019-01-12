@@ -1,4 +1,6 @@
 <?php
+$path= $_SERVER['DOCUMENT_ROOT'] . '\diner\css\c.php';
+include $path;
 include 'db.php';
 include 'header.php';
 $categories=$db->query("select * from categories");
@@ -29,7 +31,7 @@ $categories=$db->query("select * from categories");
 </head>
 <body>
     <div class="container pt-5 mt-5">
-        <h3 class="text-center p-1">Adding New Item To Menu</h3>
+        <h3 class="text-center">Adding New Item To Menu</h3>
         <form method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label class="col-md-3 control-label" for="title">Item Name</label>

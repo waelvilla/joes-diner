@@ -1,4 +1,5 @@
 <?php 
+echo   $_SERVER['PROJECT_ROOT'];
 include 'dashboard/db.php';
 include 'dashboard/header.php';
 include 'dashboard/home-nav.php';
@@ -140,11 +141,11 @@ foreach($categs as $c){
             <div class="card  m-2 bg-dark">
               <div class="row no-gutters">
                 <div class="col-auto">
-                  <img src="//placehold.it/400" class="img-fluid" >
+                  <img src="img/items/tortilla-lasagna.jpg" class="img-fluid" >
                 </div>
                 <div class="col">
                   <div class="card-block px-2">
-                    <h4 class="card-title">Plate 1</h4>
+                    <h4 class="card-title">Tortilla Lasagna</h4>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat incidunt Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi, corporis voluptatum soluta nostrum exercitationem non voluptates! Eum ab, ipsum voluptate, vero facilis repudiandae culpa aut, corporis unde doloribus voluptatibus temporibus. </p>
                     <a href="#" class="btn btn-primary">View</a>
                   </div>
@@ -167,47 +168,47 @@ foreach($categs as $c){
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="gallery-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Stationary</h2>
+                  <h2>Caviar and Smoked Salmon</h2>
                   <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+              <img class="img-fluid" src="img/items/caviar-smoked-salmon.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="gallery-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Ice Cream</h2>
+                  <h2>Seasoned Steak</h2>
                   <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
+              <img class="img-fluid" src="img/items/seasoned-steak.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="gallery-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Strawberries</h2>
+                  <h2>Cozy Vibes</h2>
                   <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
+              <img class="img-fluid" src="img/cozy-restaurant.jpg" alt="">
             </a>
           </div>
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#">
+            <a class="gallery-item" href="#">
               <span class="caption">
                 <span class="caption-content">
-                  <h2>Workspace</h2>
+                  <h2>The Kitchen</h2>
                   <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
                 </span>
               </span>
-              <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
+              <img class="img-fluid" src="img/restaurant-kitchen.jpg" alt="">
             </a>
           </div>
         </div>

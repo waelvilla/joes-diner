@@ -1,14 +1,4 @@
-/*
-header {
-  padding: 154px 0 100px;
-}
 
-@media (min-width: 992px) {
-  header {
-    padding: 156px 0 100px;
-  }
-}
-*/
 section {
   padding: 150px 0;
 }
@@ -16,7 +6,7 @@ section {
   color:red;
 }
 
-.portfolio-item {
+.gallery-item {
   display: block;
   position: relative;
   overflow: hidden;
@@ -24,7 +14,7 @@ section {
   margin: auto auto 1rem;
 }
 
-.portfolio-item .caption {
+.gallery-item .caption {
   display: flex;
   height: 100%;
   width: 100%;
@@ -35,48 +25,49 @@ section {
   z-index: 1;
 }
 
-.portfolio-item .caption .caption-content {
+.gallery-item .caption .caption-content {
   color: #fff;
   margin: auto 2rem 2rem;
 }
 
-.portfolio-item .caption .caption-content h2 {
+.gallery-item .caption .caption-content h2 {
   font-size: 0.8rem;
   text-transform: uppercase;
 }
 
-.portfolio-item .caption .caption-content p {
+.gallery-item .caption .caption-content p {
   font-weight: 300;
   font-size: 1.2rem;
 }
 
 @media (min-width: 992px) {
-  .portfolio-item {
+  .gallery-item {
     max-width: none;
     margin: 0;
   }
-  .portfolio-item .caption {
+  .gallery-item .caption {
     -webkit-transition: -webkit-clip-path 0.25s ease-out, background-color 0.7s;
     -webkit-clip-path: inset(0px);
     clip-path: inset(0px);
   }
-  .portfolio-item .caption .caption-content {
+  .gallery-item .caption .caption-content {
     transition: opacity 0.25s;
     margin-left: 5rem;
     margin-right: 5rem;
     margin-bottom: 5rem;
   }
-  .portfolio-item img {
+  .gallery-item img {
     -webkit-transition: -webkit-clip-path 0.25s ease-out;
     -webkit-clip-path: inset(-1px);
     clip-path: inset(-1px);
   }
-  .portfolio-item:hover img {
+  .gallery-item:hover img {
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }
-  .portfolio-item:hover .caption {
-    background-color: rgba(29, 128, 159, 0.9);
+  .gallery-item:hover .caption {
+    /* background-color: rgba(29, 128, 159, 0.9); */
+    background-color: rgba(66,79,149,0.9);
     -webkit-clip-path: inset(2rem);
     clip-path: inset(2rem);
   }

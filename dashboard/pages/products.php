@@ -1,3 +1,1 @@
-<?php
-include 'db.php';
-?>
+<div>Products</div>
