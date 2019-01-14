@@ -1,5 +1,4 @@
 <?php 
-echo   $_SERVER['PROJECT_ROOT'];
 include 'dashboard/db.php';
 include 'dashboard/header.php';
 include 'dashboard/home-nav.php';

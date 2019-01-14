@@ -1,6 +1,6 @@
 <?php
-$path= $_SERVER['DOCUMENT_ROOT'] . '\diner\css\c.php';
-include $path;
+// $path= $_SERVER['DOCUMENT_ROOT'] . '\diner\css\c.php';
+// include $path;
 include 'db.php';
 include 'header.php';
 $categories=$db->query("select * from categories");
@@ -8,7 +8,8 @@ $categories=$db->query("select * from categories");
     $title=mysqli_real_escape_string($db, $_POST['title']);
     $category=mysqli_real_escape_string($db, $_POST['category']);
     $price=mysqli_real_escape_string($db, $_POST['price']);
-    $imagename=$_FILES['up_img']['name'];
+    $imagename=addslashes($_FILES['up_img']['name']);
+    echo $imagename;
     $sql="INSERT INTO food(title,price,category,image_name) VALUES('$title','$price','$category','$imagename')";
     $val=$db->query($sql);
     if($val){
