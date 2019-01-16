@@ -1,6 +1,6 @@
 <?php 
 $categories= $db -> query("SELECT * FROM categories");
-$img_name="";
+
 if(isset($_POST['add_category'])){
 	$category_name=mysqli_real_escape_string($db, $_POST['category_name']);
 	$img_name=$_FILES['categ_img']['name'];
@@ -20,6 +20,7 @@ if(isset($_POST['add_category'])){
 		echo "<h5 class='text-danger'> Error Occured </h5";
 	}   
 }
+
 ?>
 
 <h3>Categories</h3>
@@ -49,11 +50,11 @@ if(isset($_POST['add_category'])){
 						</button>
 					</div>
 					<div class="modal-body">
-						<form method="post" enctype="multipart/form-data">
+						<form method="post" action="update_category.php?category=<?php echo $row['category'];?>" enctype="multipart/form-data">
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="category_name">Category Name</label>
 								<div class="col-md-8 ">
-									<input id="category_name" name="category_name" type="text" placeholder="Category Name" class="form-control"
+									<input id="category_name" name="update_category_name" type="text" placeholder="Category Name" class="form-control"
 									 value="<?php echo $row['category']; ?>" required>
 								</div>
 							</div>
@@ -63,12 +64,12 @@ if(isset($_POST['add_category'])){
 									<img src="../img/categories/<?php echo $row['category'];?>.jpg" class="card-img-top img-thumbnail menu-img">
 								</div>
 								<div class="col-md-3 ">
-									<input id="categ_img" name="categ_img" type="file" accept="image/*" required>
+									<input id="categ_img" name="update_categ_img" type="file" accept="image/*" required>
 								</div>
 							</div>
 					</div>
 					<div class="modal-footer">
-						<button type="submit" value="submit" class="btn btn-primary" name="add_category">Save Changes</button>
+						<button type="submit" value="submit" class="btn btn-primary" name="edit_category">Save Changes</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						</form>
 					</div>
