@@ -33,13 +33,13 @@ if(isset($_POST['add_category'])){
 				<h5 class="card-title"><?php echo $row['category']; ?>s</h5>
 				<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis</p>
 				<div class="container">
-					<a data-toggle="modal" data-target="#addCategory<?php echo $row['category'];?>" class="btn btn-primary">Modify</a>
+					<a data-toggle="modal" data-target="#editCategory<?php echo $row['category'];?>" class="btn btn-primary">Modify</a>
 					<a href="delete_category.php?category=<?php echo $row['category'];?>" class="btn btn-danger">Delete</a>
 				</div>
 			</div>
 		</div>
 		<!-- Edit Category -->
-		<div class="modal fade" id="addCategory<?php echo $row['category'];?>" tabindex="-1" role="dialog" aria-labelledby="edit_category_modal"
+		<div class="modal fade" id="editCategory<?php echo $row['category'];?>" tabindex="-1" role="dialog" aria-labelledby="edit_category_modal"
 		 aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">

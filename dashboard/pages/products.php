@@ -1,7 +1,5 @@
 <?php
 $categories=$db -> query("SELECT * FROM categories");
-
-
 ?>
 
 <h3>Products</h3>
