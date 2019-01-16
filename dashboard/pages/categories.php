@@ -32,13 +32,13 @@ if(isset($_POST['add_category'])){
 				<h5 class="card-title"><?php echo $row['category']; ?>s</h5>
 				<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis</p>
 				<div class="container">
-				<a data-toggle="modal" data-target="#addCategory" class="btn btn-primary" >Modify</a>
+				<a data-toggle="modal" data-target="#addCategory<?php echo $row['category'];?>" class="btn btn-primary" >Modify</a>
 				<a href="delete_category.php?category=<?php echo $row['category'];?>" class="btn btn-danger" >Delete</a>
 				</div>
 			</div>
 		</div>
 		<!-- Edit Category -->
-		<div class="modal fade" id="addCategory" tabindex="-1" role="dialog" aria-labelledby="edit_category_modal" aria-hidden="true">
+		<div class="modal fade" id="addCategory<?php echo $row['category'];?>" tabindex="-1" role="dialog" aria-labelledby="edit_category_modal" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -66,8 +66,8 @@ if(isset($_POST['add_category'])){
 							</div>
 					</div>
 					<div class="modal-footer">
+						<button type="submit" value="submit" class="btn btn-primary" name="add_category">Save Changes</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						<button type="submit" value="submit" class="btn btn-primary" name="add_category">Add Category</button>
 						</form>
 					</div>
 				</div>
@@ -113,8 +113,8 @@ if(isset($_POST['add_category'])){
 					</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				<button type="submit" value="submit" class="btn btn-primary" name="add_category">Add Category</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</form>
 			</div>
 		</div>
