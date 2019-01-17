@@ -1,6 +1,5 @@
 <?php
-// $path= $_SERVER['DOCUMENT_ROOT'] . '\diner\css\c.php';
-// include $path;
+
 include 'db.php';
 include 'header.php';
 $categories=$db->query("select * from categories");

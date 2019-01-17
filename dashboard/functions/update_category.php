@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include '../db.php';
 $old_category=$_GET['category'];
 if(isset($_POST['edit_category'])){
 	$category_name=mysqli_real_escape_string($db, $_POST['update_category_name']);
