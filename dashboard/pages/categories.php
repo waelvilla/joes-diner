@@ -34,7 +34,7 @@ if(isset($_POST['add_category'])){
 				<p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis</p>
 				<div class="container">
 					<a data-toggle="modal" data-target="#editCategory<?php echo $row['category'];?>" class="btn btn-primary">Modify</a>
-					<a href="delete_category.php?category=<?php echo $row['category'];?>" class="btn btn-danger">Delete</a>
+					<a href="functions/delete_category.php?category=<?php echo $row['category'];?>" class="btn btn-danger">Delete</a>
 				</div>
 			</div>
 		</div>
@@ -50,7 +50,7 @@ if(isset($_POST['add_category'])){
 						</button>
 					</div>
 					<div class="modal-body">
-						<form method="post" action="update_category.php?category=<?php echo $row['category'];?>" enctype="multipart/form-data">
+						<form method="post" action="functions/update_category.php?category=<?php echo $row['category'];?>" enctype="multipart/form-data">
 							<div class="form-group">
 								<label class="col-md-4 control-label" for="category_name">Category Name</label>
 								<div class="col-md-8 ">
