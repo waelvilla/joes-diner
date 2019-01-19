@@ -5,8 +5,8 @@ $id=$_GET['id'];
 $sql="DELETE FROM food WHERE id = '$id'";
 $val= $db -> query($sql);
 if($val){
-    echo $id . " deleted successfully";
-    header('location: ../index.php?active=Products');
+    $message= "<h5 class='text-success'> Deleted successfully </h5>";
+    header("location: ../index.php?active=Products&res='$message'");
     die();
 }
 

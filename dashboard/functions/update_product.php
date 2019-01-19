@@ -15,7 +15,8 @@ if(isset($_POST['edit_product'])){
 	$val=$db -> query($sql) or die("Cannot execute query");
 	
 	if($val){
-        header('location: ../index.php?active=Products');
+		$message= "<h5 class='text-success'> Updated successfully </h5>";
+        header("location: ../index.php?active=Products&res='$message'");
         die();
     }
 	else{

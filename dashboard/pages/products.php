@@ -4,6 +4,8 @@ $categories=array();
 while($category = $db_categories->fetch_assoc()){
     array_push($categories,$category);
   }
+$message=isset($_GET['res']) ? $_GET['res'] : '' ;
+echo $message;
 ?>
 
 <h3>Products</h3>

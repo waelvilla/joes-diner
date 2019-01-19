@@ -3,17 +3,20 @@ include '../db.php';
 // include 'header.php';
 // $categories=$db->query("select * from categories");
     if(isset($_POST['add_product'])){
-    echo "yes";
-    $title=mysqli_real_escape_string($db, $_POST['title']);
+    $title=mysqli_real_escape_string($db, $_POST['product_name']);
     $category=mysqli_real_escape_string($db, $_POST['category']);
-    $price=mysqli_real_escape_string($db, $_POST['price']);
-    $imagename=addslashes($_FILES['up_img']['name']);
-    echo $imagename;
+    $price=mysqli_real_escape_string($db, $_POST['product_price']);
+    $imagename=addslashes($_FILES['product_img']['name']);
+    $img_dir='../../img/items/' . $imagename;
+
+    if(!(move_uploaded_file($_FILES['product_img']['tmp_name'],$img_dir))){
+		echo "Possible File Attack!"; 
+	}
     $sql="INSERT INTO food(title,price,category,image_name) VALUES('$title','$price','$category','$imagename')";
     $val=$db->query($sql);
     if($val){
-        echo "<h5 class='text-success'> Uploaded successfully </h5>";
-        header('location: ../index.php?active=Products');
+        $message= "<h5 class='text-success'> Uploaded successfully </h5>";
+        header("location: ../index.php?active=Products&res='$message'");
         die();
     }
     else{
@@ -21,55 +24,3 @@ include '../db.php';
     }    
 }
 ?>
-<!-- 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Add Item</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css"  href="../css/style.css" />
-</head>
-<body>
-    <div class="container pt-5 mt-5">
-        <h3 class="text-center">Adding New Item To Menu</h3>
-        <form method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="title">Item Name</label>
-                <div class="col-md-9 ">
-                    <input id="title" name="title" type="text" placeholder="Item name" class="form-control" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="category">Category</label>
-                <div class="col-md-9 ">
-                    <select name="category" id="category" class="form-control" required>
-
-
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="price">Price</label>
-                <div class="col-md-9 ">
-                    <input id="price" name="price" type="number" placeholder="Price" class="form-control" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="up_img">Image</label>
-                <div class="col-md-9 ">
-                    <input id="up_img" name="up_img" type="file" accept="image/*" required>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-12 text-center">
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary btn-lg">Submit</button>
-                </div>
-            </div>
-        </form>
-
-    </div> -->
