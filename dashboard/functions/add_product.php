@@ -1,9 +1,9 @@
 <?php
-
-include 'db.php';
-include 'header.php';
-$categories=$db->query("select * from categories");
-    if(isset($_POST['submit'])){
+include '../db.php';
+// include 'header.php';
+// $categories=$db->query("select * from categories");
+    if(isset($_POST['add_product'])){
+    echo "yes";
     $title=mysqli_real_escape_string($db, $_POST['title']);
     $category=mysqli_real_escape_string($db, $_POST['category']);
     $price=mysqli_real_escape_string($db, $_POST['price']);
@@ -13,13 +13,15 @@ $categories=$db->query("select * from categories");
     $val=$db->query($sql);
     if($val){
         echo "<h5 class='text-success'> Uploaded successfully </h5>";
+        header('location: ../index.php?active=Products');
+        die();
     }
     else{
         echo "<h5 class='text-danger'> Error Occured </h5";
     }    
 }
 ?>
-
+<!-- 
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,9 +45,7 @@ $categories=$db->query("select * from categories");
                 <label class="col-md-3 control-label" for="category">Category</label>
                 <div class="col-md-9 ">
                     <select name="category" id="category" class="form-control" required>
-                        <?php while ($row = $categories->fetch_assoc()) :?>
-                        <option value="<?php echo $row['category'];?>"><?php echo $row['category'];?></option>
-                        <?php endwhile;?>
+
 
                     </select>
                 </div>
@@ -72,4 +72,4 @@ $categories=$db->query("select * from categories");
             </div>
         </form>
 
-    </div>
+    </div> -->
